@@ -58,7 +58,7 @@ const Login = () => {
   if (state && state.token) router.push("/");
   return (
     <div className={styles.container}>
-      <p>{axios.defaults.baseURL}</p>
+    
       <main className={styles.main}>
         {console.log("login page")}
         <h1 className={styles.title}>
@@ -66,7 +66,7 @@ const Login = () => {
         </h1>
         {/* {loading ? <h1>laoding</h1> : ""} */}
         <div className={styles.grid}>
-          <div className={styles.Lcard}>
+          <div className={styles.card}>
             <AuthForm
               handleSubmit={handleSubmit}
               email={email}

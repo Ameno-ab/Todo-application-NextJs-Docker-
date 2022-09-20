@@ -1,5 +1,5 @@
 import { SyncOutlined } from "@ant-design/icons";
-import { PresetStatusColorTypes } from "antd/es/_util/colors";
+
 import styles from "../../styles/Home.module.css";
 const AuthForm = ({
   handleSubmit,

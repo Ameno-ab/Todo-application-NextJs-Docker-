@@ -38,6 +38,7 @@ const UserProvider = ({ children }) => {
       }
      }
 
+    
 
   // axios.interceptors.response.use(
   //   function (response) {
@@ -59,7 +60,7 @@ const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider value={[state, setState]}>
       {children}
-      {console.log("token",token)}
+    
     </UserContext.Provider>
   );
 };

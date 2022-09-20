@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
-const Todos = ({ todos, addTodo }) => {
+const Todos = ({ todos, addTodo , Delete}) => {
   const todo = [
     {
       key: "1",
@@ -25,10 +25,10 @@ const Todos = ({ todos, addTodo }) => {
   return (
     <>
       <div className="">
-        {todos.map((todo, index) => (
+        {todos?.map((todo, index) => (
           <div key={index} className={styles.listCard}>
             <input type="checkbox" className={styles.checkBox} />
-            <li className={styles.lisItem}>{todo}</li>
+            <li className={styles.lisItem}>{todo.description}</li>
             <div className={styles.iconCard}>
               <FontAwesomeIcon
                 className={styles.icon}
@@ -39,6 +39,7 @@ const Todos = ({ todos, addTodo }) => {
                 icon={faTrash}
                 className={styles.icon}
                 color="#0070f3"
+                onClick={()=>Delete(todo._id)}
               />
             </div>
           </div>
