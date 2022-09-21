@@ -11,3 +11,4 @@ services:
       - ./component:/app/component
       - ./public:/app/public
       - ./styles:/app/styles
+      - ./context:/app/context

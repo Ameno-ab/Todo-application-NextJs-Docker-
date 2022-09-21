@@ -1,4 +1,4 @@
-import { useState, UseContext, useContext, useEffect ,useMemo} from "react";
+import { useState, UseContext, useContext, useEffect, useMemo } from "react";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Todo from "../component/todo";
@@ -22,10 +22,10 @@ const Home = () => {
   }, []);
   useEffect(() => {
     getTodo();
-  }, [state.token ]);
+  }, [state.token]);
   useEffect(() => {
     getTodo();
-  }, [todoList ]);
+  }, [todoList]);
 
   const addTodo = async () => {
     // e.preventDefault();
@@ -85,26 +85,21 @@ const Home = () => {
     }
   };
 
-  const Delete = async(id) => {
-    try{
-  console.log("delete clicked",id);
- 
+  const Delete = async (id) => {
+    try {
+      console.log("delete clicked", id);
 
-  const { data } = await axios.delete(`/task/${id}`, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${state.token}`,
-    },
-       
-  });
-  getTodo();
-
-    }catch(err){
+      const { data } = await axios.delete(`/task/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${state.token}`,
+        },
+      });
+      getTodo();
+    } catch (err) {
       console.log(err);
-   
     }
-
-  }
+  };
 
   const logout = () => {
     window.localStorage.removeItem("auth");
@@ -148,7 +143,7 @@ const Home = () => {
           {loading ? (
             <p>loading...</p>
           ) : (
-            <Todo todos={LtodoList} addTodo={addTodo} Delete={Delete}/>
+            <Todo todos={LtodoList} addTodo={addTodo} Delete={Delete} />
           )}
           {console.log("todo list", LtodoList)}
         </div>
