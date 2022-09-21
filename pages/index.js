@@ -103,7 +103,7 @@ const Home = () => {
 
   const logout = () => {
     window.localStorage.removeItem("auth");
-    setState(null);
+    setState("");
     router.push("/login");
   };
   return (

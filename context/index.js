@@ -29,11 +29,11 @@ const UserProvider = ({ children }) => {
      const getUser = () =>{
       // var User= JSON.parse(window.localStorage.getItem("auth"))
 
-      if(!state){
+      if(token === ""){
         // setState(User);
         // router.push("/index")
       // }else{
-        setState(null);
+        setState("");
         router.push("/login")
       }
      }
